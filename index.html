@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles/css/reset.css">
+    <link rel="stylesheet" href="src/styles/css/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="containerForLogo">
+            <img class="logoSW" src="src/images/star_wars_logo.png" alt="">
+        </div>
+        <div id="containerForButtons">
+            <select name="films" id="films">
+                <option value="1">Star Wars Episode VI: Return of the Jedi</option>
+                <option value="2" selected>Star Wars Episode V: The Empire Strikes Back</option>
+                <option value="3">Star Wars Episode IV: A New Hope</option>
+                <option value="4">Star Wars Episode І: The Phantom Menace</option>
+                <option value="5">Star Wars Episode II: Attack of the Clones</option>
+                <option value="6">Star Wars Episode III: Revenge of the Sith</option>
+            </select>
+            <a id="showInformation">Get Information about Characters</a>
+            <a id="showPlanets">Get Information about Planets</a>
+        </div>
+        <div id="containerForCharacters"></div>
+        <div id="containerForPlanet">
+            <ul id="planets">Planets:</ul>
+            <a id="nextPlanets" class="next">Next</a>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

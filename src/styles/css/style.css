@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "WinterYesterday";
+    src: url("../../font/WinterYesterday.ttf");
+}
+
+body {
+    height: 100%;
+    background: url(../../images/background.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "WinterYesterday", sans-serif;
+}
+
+#container {
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#containerForLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoSW {
+    text-align: center;
+    height: 250px;
+    margin-top: 150px;
+}
+
+#containerForButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    align-items: center;
+}
+
+#showInformation,
+#showPlanets, 
+#nextPlanets  {
+    width: 185px;
+    margin: 60px 0;
+    padding: 15px;
+    font-size: 26px;
+    background: #1f0707c9;
+    color: orangered;
+    text-decoration: none;
+    border: 1px solid orangered;
+    text-align: center;
+    cursor: pointer;
+}
+
+#containerForCharacters {
+    display: none;
+    width: 1050px;
+    justify-content: space-around;
+    margin: 100px 0;
+    padding: 0 50px;
+    flex-wrap: wrap;
+}
+
+.characterCard {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 20px;
+}
+
+.characterCardPhoto {
+    width: 150px;
+
+}
+
+.characterCardPhoto img,
+.characterGender img  {
+    width: 100%;
+
+}
+
+.characterCardInfo {
+    margin: 0 auto;
+    width: 100px;
+}
+
+.characterName, .characterBD {
+    color: red;
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+.characterGender {
+    width: 40px;
+    margin-top: 10px;
+}
+
+#containerForPlanet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#containerForPlanet ul {
+    display: none;
+    color: rgb(255, 238, 0);
+    font-size: 38px;
+    margin-top: 5px;
+    list-style-type: disc;
+}
+
+#containerForPlanet ul li{
+    display: list-item;
+    color: rgb(255, 238, 0);
+    font-size: 35px;
+    margin: 50px;
+}
+
+.next {
+    display: none;
+}
+
+#films {
+    width: 150px;
+    height: 32px;
+}
