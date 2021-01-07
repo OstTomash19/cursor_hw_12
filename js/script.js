@@ -4,7 +4,7 @@ const nextPlanets = document.getElementById('nextPlanets');
 const selectFilms = document.getElementById('films');
 let counter = 1;
 
-const createBlocksCharacters = (res) => {
+const createBlocksCharacters = (data) => {
     const containerForCharacters = document.getElementById('containerForCharacters');
     const characterCard = document.createElement('div');
     const characterCardPhoto = document.createElement('div');
@@ -22,13 +22,13 @@ const createBlocksCharacters = (res) => {
     characterBD.classList.add('characterBD');
     characterGender.classList.add('characterGender');
 
-    characterPhotoImg.src = `src/images/characters/` + res.data.name + `.png`;
-    characterName.innerText = `Name:\n` + res.data.name;
-    characterBD.innerText = `B-Day:\n` + res.data.birth_year;
+    characterPhotoImg.src = `src/images/characters/` + data.name + `.png`;
+    characterName.innerText = `Name:\n` + data.name;
+    characterBD.innerText = `B-Day:\n` + data.birth_year;
     containerForCharacters.style.display = 'flex';
 
-    if(res.data.gender === `male`) characterGenderImg.src = `src/images/gender/male.png`;
-    else if(res.data.gender === `female`) characterGenderImg.src = `src/images/gender/female.png`;
+    if(data.gender === `male`) characterGenderImg.src = `src/images/gender/male.png`;
+    else if(data.gender === `female`) characterGenderImg.src = `src/images/gender/female.png`;
     else characterGenderImg.src = `src/images/gender/dontKnow.png`;
 
     containerForCharacters.append(characterCard);
@@ -68,9 +68,12 @@ function getPersonsSW() {
         })
         .then((data) => {
             data.characters.forEach(element => {
-                axios.get(element)
-                    .then((res) => {
-                        createBlocksCharacters(res);
+                fetch(element)
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((data) => {
+                        createBlocksCharacters(data);
                     });
             })
         })
