@@ -62,20 +62,25 @@ const deleteBlocksPlanets = () => {
 }
 
 function getPersonsSW() {
-    axios.get('https://swapi.dev/api/films/' + selectFilms.value)
-        .then((result) => {
-            result.data.characters.forEach(element => {
+    fetch('https://swapi.dev/api/films/' + selectFilms.value)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            data.characters.forEach(element => {
                 axios.get(element)
                     .then((res) => {
                         createBlocksCharacters(res);
                     });
             })
-            
         })
+        .catch(function(error) {
+            console.log(error);
+        });
 }
 
 function getPlanets() {
-            fetch('https://swapi.dev/api/planets/?page=' + counter)
+    fetch('https://swapi.dev/api/planets/?page=' + counter)
             .then((response) => {
                 return response.json();
             })
